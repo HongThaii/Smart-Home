@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Iot</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+    <script src="jquery.js"></script>
+    <script src="highcharts.js"></script>
+    <script src="export-data.js"></script>
+    <script src="accessibility.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  </head>
+
+  <body>
+    <div class="jumbotron jumbotron-fluid mb-1">
+      <div class="container">
+        <h1 class="text-center">IoT Dashboard</h1>
+        <p class="text-center">Đỗ Hồng Thái - B19DCDT214</p>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row text-center" style="font-size: 150%;">
+        <div class="col-sm pt-2 op1"><span class="glyphicon glyphicon-fire"></span>
+          Nhiệt độ
+          <br>
+          <h1 id="Nhietdo" style="margin-top:50px; font-size:250%"></h1>
+        </div>
+        <div class="col-sm pt-2 op2"><span class="glyphicon glyphicon-tint"></span>
+          Độ ẩm
+          <br>
+          <h1 id="Doam" style="margin-top:50px; font-size:250%"></h1>
+        </div>
+        <div class="col-sm pt-2 op1"><span class="glyphicon glyphicon-adjust"></span>
+          Ánh sáng
+          <br>
+          <h1 id="Anhsang" style="margin-top:50px; font-size:250%"></h1>
+        </div>
+        <div id="ga" class="col-sm pt-2 op2"><span class="glyphicon glyphicon-exclamation-sign"></span>
+          Gas
+          <br>
+          <h1 id="Khigas" style="margin-top:50px; font-size:250%"></h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!--------BIEU DO-------->
+        <div class="col-sm-9 text-center pt-2">
+          <button id="btn1" class="button" onclick="Chart1()">Change</button>
+          <button id="btn2" class="button" onclick="warning()">Warning</button>
+          <br>
+          <div id ="container1" style="height: 90%;"></div>
+          <div id ="container2" style="height: 90%;"></div>
+        </div>
+        <div class="col-sm-3">
+          <div class="row text-center" style="font-size: 150%">
+            <!--------DIEU KHIEN LED-------->
+            <div class="col-sm pt-2 op4">
+              Đèn
+              <br>
+              <img id="batden" src="led-on.png" alt="Led on" style="width: 40%; height: 45%">
+              <img id="tatden" src="led-light.png" alt="Led off" style="width: 40%; height: 45%">
+              <br>
+              <button id="den1" type="button" class="btn text-white btn-lg mt-5 mx-5" style="background-color:dodgerblue" onclick="on()">On</button>
+              <button id="den2" type="button" class="btn text-white btn-lg mt-5 mx-5" style="background-color:dodgerblue" onclick="off()">Off</button>
+            </div>
+          </div>
+
+          <div class="row text-center" style="font-size: 150%">
+            <!--------DIEU KHIEN DIEU HOA-------->
+            <div class="col-sm pt-2 op5">
+              Điều hòa
+              <br>
+              <img id="batdh" src="dh-on.png" alt="Dieu hoa bat" style="width: 50%; height: 50%">
+              <img id="tatdh" src="dh-off.png" alt="Dieu hoa tat" style="width: 50%; height: 45%">
+              <br>
+              <button id="dieuhoa1" type="button" class="btn text-white btn-lg mt-5 mx-5" style="background-color:dodgerblue" onclick="bat()">On</button>
+              <button id="dieuhoa2" type="button" class="btn text-white btn-lg mt-5 mx-5" style="background-color:dodgerblue" onclick="tat()">Off</button>
+            </div>
+          </div>        
+        </div>
+      </div>
+    </div>
+    <script src="animation.js"></script>
+  </body>
+</html>

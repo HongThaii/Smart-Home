@@ -1,0 +1,42 @@
+.op1{
+    background-color:lavender;
+    height: 300px;
+}
+
+.op2{
+    background-color: lavenderblush;
+    height: 300px;
+}
+
+/* .op3{
+    background-color: #EBE4F2;
+    height: 600px; 
+    font-size: 160%;
+} */
+
+.button {
+    font-family: lato,sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    background-color:darkviolet;
+    color: white;
+    display: inline-block;
+    padding: 10px 40px 10px 40px;
+    position: relative;
+    border: 3px solid #ffffff;
+    border-radius: 20px;
+    opacity: 0.6;
+  }
+.button:hover {opacity: 1}
+
+.op4{
+    background-color: #F2CEF2;
+    height: 300px;
+}
+
+.op5{
+    background-color:#C6A9D9;
+    height: 300px;
+}
